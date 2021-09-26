@@ -14,8 +14,23 @@ Please ask participants for your raid to join WantsXxx tags. The instructions ar
 @client.event
 async def on_message(message):
     server = client.get_guild(876131915424489472)
-    uxie_role = server.get_role(885380248617758771)
-    if uxie_role in message.role_mentions: # 話しかけられたかの判定
+    mega_role = server.get_role(890106825817587723)
+    uxie_role = server.get_role(890106629830361099)
+    mesprit_role = server.get_role(890106668220821545)
+    azelf_role = server.get_role(890106033920442368)
+    threestar_role = server.get_role(890106737183572019)
+    onestart_role = server.get_role(890106793689231360)
+    if mega_role in message.role_mentions: # 話しかけられたかの判定
+        await reply(message) # 返信する非同期関数を実行
+    elif uxie_role in message.role_mentions: # 話しかけられたかの判定
+        await reply(message) # 返信する非同期関数を実行
+    elif mesprit_role in message.role_mentions: # 話しかけられたかの判定
+        await reply(message) # 返信する非同期関数を実行
+    elif azelf_role in message.role_mentions: # 話しかけられたかの判定
+        await reply(message) # 返信する非同期関数を実行
+    elif threestar_role in message.role_mentions: # 話しかけられたかの判定
+        await reply(message) # 返信する非同期関数を実行
+    elif onestart_role in message.role_mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
 
 client.run(TOKEN)
