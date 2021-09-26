@@ -19,7 +19,7 @@ async def on_message(message):
     mesprit_role = server.get_role(890106668220821545)
     azelf_role = server.get_role(890106033920442368)
     threestar_role = server.get_role(890106737183572019)
-    onestart_role = server.get_role(890106793689231360)
+    onestar_role = server.get_role(890106793689231360)
     if mega_role in message.role_mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
     elif uxie_role in message.role_mentions: # 話しかけられたかの判定
@@ -30,7 +30,7 @@ async def on_message(message):
         await reply(message) # 返信する非同期関数を実行
     elif threestar_role in message.role_mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
-    elif onestart_role in message.role_mentions: # 話しかけられたかの判定
+    elif onestar_role in message.role_mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
 
 client.run(TOKEN)
