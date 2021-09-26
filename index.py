@@ -6,7 +6,7 @@ client = discord.Client()
 TOKEN = os.environ['TOKEN']
 
 async def reply(message):
-    rules = await client.fetch_channel("891738341941342218")
+    rules = await client.fetch_channel("rules")
     reply = f"""Click the Create Thread in the context menu of the post (e.g. The image of egg) to create a new thread.
 Please ask participants for your raid to join WantsXxx tags. The instructions are in {rules.mention}."""
     await message.channel.send(reply) # 返信メッセージを送信
