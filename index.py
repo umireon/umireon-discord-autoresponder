@@ -13,7 +13,8 @@ Please ask participants for your raid to join WantsXxx tags. The instructions ar
 
 @client.event
 async def on_message(message):
-    if client.user in message.mentions: # 話しかけられたかの判定
+    uxie_role = client.get_role(885380248617758771)
+    if uxie_role in message.mentions: # 話しかけられたかの判定
         await reply(message) # 返信する非同期関数を実行
 
 client.run(TOKEN)
