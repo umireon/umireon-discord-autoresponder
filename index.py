@@ -3,7 +3,7 @@ import os
 
 client = discord.Client()
 
-TOKEN = os.environ.TOKEN
+TOKEN = os.environ['TOKEN']
 
 async def reply(message):
     reply = f'Hey'
