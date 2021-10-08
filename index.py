@@ -2,7 +2,9 @@ import discord
 import os
 import re
 
-client = discord.Client()
+client = discord.Client(
+    allowed_mentions=discord.AllowedMentions.all()
+)
 
 TOKEN = os.environ['TOKEN']
 
