@@ -33,7 +33,7 @@ async def on_message(message):
 
     rufflet_role = server.get_role(893294731436625970)
     chansey_role = server.get_role(893487840133017661)
-    one_three_roles = set(rufflet_role, chansey_role)
+    one_three_roles = {rufflet_role, chansey_role}
     if len(one_three_roles & role_mentions) > 0:
         await reply_one_three(message)
 
