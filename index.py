@@ -17,7 +17,7 @@ Please ask participants for your raid to join WantsXxx tags. The instructions ar
 
 
 async def reply_one_three(one_three_role, message):
-    reply = f"""{one_three_role.mention}"""
+    reply = f"""{one_three_role.mention} system"""
     await message.channel.send(reply)
 
 
@@ -28,7 +28,7 @@ async def on_message(message):
     roles = set(role for role in server.roles if prog.match(
         role.name) is not None)
     role_mentions = set(message.role_mentions)
-    if len(roles & role_mentions) > 0:
+    if len(roles & role_mentions) > 0 and "system" not in message.content:
         await reply_instructions(message)
 
     one_three_role = server.get_role(893286398604501032)
