@@ -34,7 +34,8 @@ async def on_message(message):
     one_three_role = server.get_role(893286398604501032)
     rufflet_role = server.get_role(893294731436625970)
     chansey_role = server.get_role(893487840133017661)
-    one_three_roles = {rufflet_role, chansey_role}
+    lickitung_role = server.get_role(894091287022682193)
+    one_three_roles = {rufflet_role, chansey_role, lickitung_role}
     if len(one_three_roles & role_mentions) > 0:
         await reply_one_three(one_three_role, message)
 
