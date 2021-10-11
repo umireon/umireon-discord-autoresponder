@@ -17,26 +17,25 @@ Please ask participants for your raid to join WantsXxx tags. The instructions ar
 
 
 async def reply_one_three(one_three_role, message):
-    reply = f"""{one_three_role.mention} system"""
+    reply = f"""{one_three_role.mention} no instructions"""
     await message.channel.send(reply)
 
 
 @client.event
 async def on_message(message):
     server = client.get_guild(876131915424489472)
-    prog = re.compile("^Wants")
-    roles = set(role for role in server.roles if prog.match(
-        role.name) is not None)
     role_mentions = set(message.role_mentions)
-    if len(roles & role_mentions) > 0 and "system" not in message.content:
+
+    prog_wants = re.compile("^Wants")
+    wants_roles = set(role for role in server.roles if prog_wants.match(
+        role.name) is not None)
+    if len(wants_roles & role_mentions) > 0 and "no instructions" not in message.content:
         await reply_instructions(message)
 
-    one_three_role = server.get_role(893286398604501032)
-    rufflet_role = server.get_role(893294731436625970)
-    chansey_role = server.get_role(893487840133017661)
-    lickitung_role = server.get_role(894091287022682193)
-    one_three_roles = {rufflet_role, chansey_role, lickitung_role}
-    if len(one_three_roles & role_mentions) > 0:
+    prog_wants_number = re.compile("^Wants[13]")
+    numbered_roles = set(role for role in server.roles if prog_wants_number.match(
+        role.name) is not None)
+    if len(numbered_roles & role_mentions) > 0:
         await reply_one_three(one_three_role, message)
 
 client.run(TOKEN)
