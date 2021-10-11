@@ -32,6 +32,7 @@ async def on_message(message):
     if len(wants_roles & role_mentions) > 0 and "no instructions" not in message.content:
         await reply_instructions(message)
 
+    one_three_role = server.get_role(893286398604501032)
     prog_wants_number = re.compile("^Wants[13]")
     numbered_roles = set(role for role in server.roles if prog_wants_number.match(
         role.name) is not None)
