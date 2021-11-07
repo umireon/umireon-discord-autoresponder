@@ -10,8 +10,9 @@ TOKEN = os.environ['TOKEN']
 
 
 async def reply_instructions(message):
-    join_tags = client.get_channel(894244917184987226)
+    join_tags = client.get_channel(889512252472959018)
     reply = f"""レイド卵の投稿などのコンテキストメニューを表示し（写真の外側をロングタップする）、スレッドを作成するからスレッドを作成してください！
+{join_tags.mention}に作り方の動画があります！
 Click the Create Thread in the context menu of the post (e.g. The image of egg) to create a new thread.
 Please ask participants for your raid to join WantsXxx tags. The instructions are in {join_tags.mention}."""
     await message.channel.send(reply)
