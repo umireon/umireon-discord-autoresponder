@@ -16,13 +16,8 @@ Please ask participants for your raid to join WantsXxx tags. The instructions ar
     await message.channel.send(reply)
 
 
-async def reply_five(five_role, message):
+async def reply_role(five_role, message):
     reply = f"""{five_role.mention} no instructions"""
-    await message.channel.send(reply)
-
-
-async def reply_one_three(one_three_role, message):
-    reply = f"""{one_three_role.mention} no instructions"""
     await message.channel.send(reply)
 
 
@@ -42,13 +37,20 @@ async def on_message(message):
     numbered13_roles = set(role for role in server.roles if prog_wants13_number.match(
         role.name) is not None)
     if len(numbered13_roles & role_mentions) > 0:
-        await reply_one_three(one_three_role, message)
+        await reply_role(one_three_role, message)
 
     five_role = server.get_role(893286159558541362)
     prog_wants5_number = re.compile("^Wants[5]")
     numbered5_roles = set(role for role in server.roles if prog_wants5_number.match(
         role.name) is not None)
     if len(numbered5_roles & role_mentions) > 0:
-        await reply_five(five_role, message)
+        await reply_role(five_role, message)
+
+    mega_role = server.get_role(890106825817587723)
+    prog_wants6_number = re.compile("^Wants[6]")
+    numbered6_roles = set(role for role in server.roles if prog_wants6_number.match(
+        role.name) is not None)
+    if len(numbered6_roles & role_mentions) > 0:
+        await reply_role(mega_role, message)
 
 client.run(TOKEN)
